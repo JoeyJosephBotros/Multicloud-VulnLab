@@ -1,0 +1,32 @@
+{
+  "attack_start_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://multicloudlabpubacf775a4.blob.core.windows.net/public-backups"
+  },
+  "aws_account_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "416160772046"
+  },
+  "aws_s3_bucket": {
+    "sensitive": false,
+    "type": "string",
+    "value": "multicloudlab-data-acf775a4"
+  },
+  "azure_public_storage": {
+    "sensitive": false,
+    "type": "string",
+    "value": "multicloudlabpubacf775a4"
+  },
+  "azure_secrets_storage": {
+    "sensitive": false,
+    "type": "string",
+    "value": "multicloudlabsecacf775a4"
+  },
+  "lab_entry_point": {
+    "sensitive": false,
+    "type": "string",
+    "value": "  \n╔════════════════════════════════════════════════════════════════════════════╗\n║              TECHCORP MULTI-CLOUD SECURITY ASSESSMENT                      ║\n║                         Lab Entry Point                                    ║\n╚════════════════════════════════════════════════════════════════════════════╝\n  \nSCENARIO: GitHub Leak Discovery\n════════════════════════════════════════════════════════════════════════════\n  \nDuring OSINT reconnaissance, you discovered a DELETED commit in TechCorp's\npublic GitHub repository containing internal cloud infrastructure documentation.\n  \nRepository: techcorp-demos/infrastructure-docs (archived)\nCommit SHA: a7f3b2c9d4e5f6 (deleted September 2025)\nFile: docs/cloud-backup-setup.md\n  \nLEAKED INFORMATION:\n────────────────────────────────────────────────────────────────────────────\n  \n\"For initial development and testing, we've configured a temporary Azure \nStorage container with public access to facilitate easy team sharing.\n  \nInfrastructure Details:\n- Azure Storage Container: https://multicloudlabpubacf775a4.blob.core.windows.net/public-backups\n- Access: Container-level public read\n- Purpose: Backup automation scripts and configuration templates\n  \nDevelopment Team Note (John Doe - DevOps Lead):\n'I've placed the backup-sync.sh script in the container. Note that it\ncurrently has AWS credentials hardcoded for our testing phase. This is\ntemporary until we migrate to proper secret management systems.'\n  \nMigration Timeline: Q4 2025 (Currently in development phase)\"\n  \nYOUR MISSION:\n════════════════════════════════════════════════════════════════════════════\n  \n1. Enumerate the exposed Azure Storage container\n2. Identify and extract embedded credentials\n3. Pivot to AWS using discovered credentials\n4. Enumerate cloud resources and permissions\n5. Execute lateral movement between clouds\n6. Escalate privileges to administrator access\n7. Document complete attack chain and business impact\n  \nTECHNICAL DETAILS:\n────────────────────────────────────────────────────────────────────────────\n  \nAzure Storage Account: multicloudlabpubacf775a4\nContainer Name: public-backups\nContainer URL: https://multicloudlabpubacf775a4.blob.core.windows.net/public-backups\n  \nKey File: backup-sync.sh (contains embedded AWS credentials)\n  \nAWS Account ID: 416160772046\nAWS Region: us-east-1\n  \nATTACK CHAIN OVERVIEW:\n────────────────────────────────────────────────────────────────────────────\n  \nStep 1: Azure Public Storage → Download backup-sync.sh\n        ↓ Extract: multicloudlab-user AWS credentials\n  \nStep 2: AWS Lambda Enumeration → Extract Azure private storage credentials\n        ↓ Pivot: Access Azure private storage (sensitive-data container)\n  \nStep 3: Azure Private Storage → Download aws-backup-credentials.txt\n        ↓ Extract: s3-backup-user credentials\n  \nStep 4: AWS S3 Access → Download config/aws-accounts.json\n        ↓ Extract: it-support-user credentials\n  \nStep 5: AWS IAM Enumeration → Discover CreateAccessKey permission\n        ↓ Exploit: Create access keys for multicloudlab-admin\n  \nStep 6: AWS Administrator → Complete cloud compromise achieved\n  \nSCOPE:\n────────────────────────────────────────────────────────────────────────────\n✓ In Scope: Azure multicloudlabpubacf775a4*, AWS 416160772046\n✗ Out of Scope: DoS attacks, data destruction, social engineering\n  \nFIRST STEP:\n────────────────────────────────────────────────────────────────────────────\n  \nEnumerate the Azure container to discover files (no authentication needed):\n  \ncurl \"https://multicloudlabpubacf775a4.blob.core.windows.net/public-backups?restype=container\u0026comp=list\"\n  \n════════════════════════════════════════════════════════════════════════════\n  \nSave the full engagement brief: See ENTRY-POINT.md in the docs folder\n  \nGood luck with your assessment!\n  \n"
+  }
+}
