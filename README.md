@@ -248,12 +248,16 @@ python3 --version
 
 
 ### Step 1: Verify Prerequisites
+```
 ./scripts/verify-setup.sh
+```
 
 ### Step 2: Configure Credentials
+```
 cd terraform
 cp terraform.tfvars.example terraform.tfvars
 nano terraform.tfvars
+```
 
 Fill in your Azure credentials:
 - azure_subscription_id
@@ -262,34 +266,22 @@ Fill in your Azure credentials:
 - azure_tenant_id
 
 ### Step 3: Deploy Lab
+```
 cd ..
 ./scripts/deploy.sh
+```
 
 ### Step 4: Run Attack Simulation
+```
 ./scripts/test-attack.sh
+```
 
 ### Step 5: Cleanup
+```
 ./scripts/cleanup.sh
+```
 
 Always cleanup to avoid ongoing charges!
-
-## Project Structure
-multicloud-lab/
-├── terraform/              Infrastructure as Code
-│   ├── providers.tf       AWS + Azure providers
-│   ├── variables.tf       Variable definitions
-│   ├── terraform.tfvars   Your credentials
-│   ├── aws-resources.tf   5 AWS resources
-│   ├── azure-resources.tf 3 Azure resources
-│   └── outputs.tf         Deployment outputs
-├── scripts/               Automation scripts
-│   ├── verify-setup.sh   Prerequisites check
-│   ├── deploy.sh         Automated deployment
-│   ├── cleanup.sh        Resource cleanup
-├── docs/                  Documentation
-│   ├── TROUBLESHOOTING.md Common issues
-├── outputs/               Deployment information
-└── README.md             This file
 
 ## Vulnerabilities Demonstrated
 
