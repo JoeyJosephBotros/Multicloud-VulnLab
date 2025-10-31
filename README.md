@@ -1,5 +1,5 @@
 # Multi-Cloud Security Lab
-Cross-Cloud Credential Loop Attack Scenario
+A Cross-Cloud Vulnerable Attack Scenario
 
 A deliberately vulnerable multi-cloud environment for security testing and demonstration purposes.
 
