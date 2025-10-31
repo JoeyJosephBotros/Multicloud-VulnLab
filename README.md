@@ -271,12 +271,7 @@ cd ..
 ./scripts/deploy.sh
 ```
 
-### Step 4: Run Attack Simulation
-```
-./scripts/test-attack.sh
-```
-
-### Step 5: Cleanup
+### Step 4: Cleanup
 ```
 ./scripts/cleanup.sh
 ```
